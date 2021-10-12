@@ -1,0 +1,11 @@
+prefix=/home/giibbu/school/CSCI260/sqlpy/env
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+toolexeclibdir=${libdir}
+includedir=/home/giibbu/school/CSCI260/sqlpy/env/include
+
+Name: libffi
+Description: Library supporting Foreign Function Interfaces
+Version: 3.3
+Libs: -L${toolexeclibdir} -lffi
+Cflags: -I${includedir}
