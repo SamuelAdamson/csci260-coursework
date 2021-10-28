@@ -87,6 +87,31 @@ def select_airline_by_id(id, db=config.DB_NAME):
     else:
         return None
 
+# Added for Form to SQL
+# Select by Name
+def select_airline_by_name(name, db=config.DB_NAME):
+    # Select Command sql
+    sql = f'''
+        select { COL_ID } from { TAB_NAME }
+        where { COL_NAME } = :{ COL_NAME }
+    '''
+    # Parameters
+    params = {
+        COL_NAME: filter.dbString(name)
+    }
+
+    # Store response from sql operation
+    response = operations.select_from_table(sql, params, db)
+
+    if response is not None:
+        return {
+            COL_ID: response[0],
+            COL_NAME: filter.dbString(name)
+        }
+    else:
+        return None
+
+
 # Testing Create, Update, Read, Delete
 def test_airline(db=config.DB_NAME):
     # Drop Old Table (Delete)

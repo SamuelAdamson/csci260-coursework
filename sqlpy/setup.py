@@ -1,5 +1,7 @@
-# Test Deleting
-# Set up for Inner Join Testing
+#!/usr/bin/env python
+
+# sqlpy -- Set up for Inner Join Testing
+# form to sql -- Set up table, no entries are added, table is only cleaned and created 
 # Samuel Adamson
 
 import flight
@@ -27,7 +29,7 @@ def setup():
     # Clean and Create Tables
     clean()
     create()
-
+   
     # Add Cities ==
     houston_id = city.insert_city({ # Houston
         city.COL_NAME: 'Houston',
@@ -128,87 +130,91 @@ def setup():
     })
     
 
-    # Add Flights ==
-    flight0_id = flight.insert_flight({ # Flight Number 0
-        flight.COL_DEP_AIRPT_ID: 0,
-        flight.COL_ARR_AIRPT_ID: 1,
-        flight.COL_AIRLINE_ID: 1,
-        flight.COL_DEP_UTC: '2021-09-07 06:32:21',
-        flight.COL_ARR_UTC: '2021-09-07 08:56:32',
-        flight.COL_ON_TIME: 1
-    })
-    flight1_id = flight.insert_flight({ # Flight Number 1
-        flight.COL_DEP_AIRPT_ID: 0,
-        flight.COL_ARR_AIRPT_ID: 3,
-        flight.COL_AIRLINE_ID: 2,
-        flight.COL_DEP_UTC: '2021-09-07 07:54:15',
-        flight.COL_ARR_UTC: '2021-09-07 11:43:54',
-        flight.COL_ON_TIME: 0
-    })
-    flight2_id = flight.insert_flight({ # Flight Number 2
-        flight.COL_DEP_AIRPT_ID: 1,
-        flight.COL_ARR_AIRPT_ID: 4,
-        flight.COL_AIRLINE_ID: 2,
-        flight.COL_DEP_UTC: '2021-09-07 08:13:10',
-        flight.COL_ARR_UTC: '2021-09-07 11:58:06',
-        flight.COL_ON_TIME: 1
-    })
-    flight3_id = flight.insert_flight({ # Flight Number 3
-        flight.COL_DEP_AIRPT_ID: 4,
-        flight.COL_ARR_AIRPT_ID: 2,
-        flight.COL_AIRLINE_ID: 0,
-        flight.COL_DEP_UTC: '2021-09-07 08:32:46',
-        flight.COL_ARR_UTC: '2021-09-07 14:43:43',
-        flight.COL_ON_TIME: 1
-    })
-    flight4_id = flight.insert_flight({ # Flight Number 4
-        flight.COL_DEP_AIRPT_ID: 2,
-        flight.COL_ARR_AIRPT_ID: 1,
-        flight.COL_AIRLINE_ID: 0,
-        flight.COL_DEP_UTC: '2021-09-07 09:01:28',
-        flight.COL_ARR_UTC: '2021-09-07 11:56:23',
-        flight.COL_ON_TIME: 1
-    })
-    flight5_id = flight.insert_flight({ # Flight Number 5
-        flight.COL_DEP_AIRPT_ID: 4,
-        flight.COL_ARR_AIRPT_ID: 0,
-        flight.COL_AIRLINE_ID: 2,
-        flight.COL_DEP_UTC: '2021-09-07 09:27:54',
-        flight.COL_ARR_UTC: '2021-09-07 12:21:03',
-        flight.COL_ON_TIME: 0
-    })
-    flight6_id = flight.insert_flight({ # Flight Number 6
-        flight.COL_DEP_AIRPT_ID: 6,
-        flight.COL_ARR_AIRPT_ID: 7,
-        flight.COL_AIRLINE_ID: 4,
-        flight.COL_DEP_UTC: '2021-09-07 09:50:12',
-        flight.COL_ARR_UTC: '2021-09-07 12:39:32',
-        flight.COL_ON_TIME: 1
-    })
-    flight7_id = flight.insert_flight({ # Flight Number 7
-        flight.COL_DEP_AIRPT_ID: 6,
-        flight.COL_ARR_AIRPT_ID: 2,
-        flight.COL_AIRLINE_ID: 4,
-        flight.COL_DEP_UTC: '2021-09-07 10:41:17',
-        flight.COL_ARR_UTC: '2021-09-07 20:04:28',
-        flight.COL_ON_TIME: 1
-    })
-    flight8_id = flight.insert_flight({ # Flight Number 8
-        flight.COL_DEP_AIRPT_ID: 7,
-        flight.COL_ARR_AIRPT_ID: 6,
-        flight.COL_AIRLINE_ID: 3,
-        flight.COL_DEP_UTC: '2021-09-07 11:21:49',
-        flight.COL_ARR_UTC: '2021-09-07 13:36:38',
-        flight.COL_ON_TIME: 0
-    })
-    flight9_id = flight.insert_flight({ # Flight Number 9
-        flight.COL_DEP_AIRPT_ID: 7,
-        flight.COL_ARR_AIRPT_ID: 2,
-        flight.COL_AIRLINE_ID: 0,
-        flight.COL_DEP_UTC: '2021-09-07 11:48:56',
-        flight.COL_ARR_UTC: '2021-09-07 20:15:13',
-        flight.COL_ON_TIME: 0
-    })
+    # <<<<<< This section was used for the sqlpy assignment >>>>>>
+    
+    # # Add Flights ==
+    # flight0_id = flight.insert_flight({ # Flight Number 0
+    #     flight.COL_DEP_AIRPT_ID: 0,
+    #     flight.COL_ARR_AIRPT_ID: 1,
+    #     flight.COL_AIRLINE_ID: 1,
+    #     flight.COL_DEP_UTC: '2021-09-07 06:32:21',
+    #     flight.COL_ARR_UTC: '2021-09-07 08:56:32',
+    #     flight.COL_ON_TIME: 1
+    # })
+    # flight1_id = flight.insert_flight({ # Flight Number 1
+    #     flight.COL_DEP_AIRPT_ID: 0,
+    #     flight.COL_ARR_AIRPT_ID: 3,
+    #     flight.COL_AIRLINE_ID: 2,
+    #     flight.COL_DEP_UTC: '2021-09-07 07:54:15',
+    #     flight.COL_ARR_UTC: '2021-09-07 11:43:54',
+    #     flight.COL_ON_TIME: 0
+    # })
+    # flight2_id = flight.insert_flight({ # Flight Number 2
+    #     flight.COL_DEP_AIRPT_ID: 1,
+    #     flight.COL_ARR_AIRPT_ID: 4,
+    #     flight.COL_AIRLINE_ID: 2,
+    #     flight.COL_DEP_UTC: '2021-09-07 08:13:10',
+    #     flight.COL_ARR_UTC: '2021-09-07 11:58:06',
+    #     flight.COL_ON_TIME: 1
+    # })
+    # flight3_id = flight.insert_flight({ # Flight Number 3
+    #     flight.COL_DEP_AIRPT_ID: 4,
+    #     flight.COL_ARR_AIRPT_ID: 2,
+    #     flight.COL_AIRLINE_ID: 0,
+    #     flight.COL_DEP_UTC: '2021-09-07 08:32:46',
+    #     flight.COL_ARR_UTC: '2021-09-07 14:43:43',
+    #     flight.COL_ON_TIME: 1
+    # })
+    # flight4_id = flight.insert_flight({ # Flight Number 4
+    #     flight.COL_DEP_AIRPT_ID: 2,
+    #     flight.COL_ARR_AIRPT_ID: 1,
+    #     flight.COL_AIRLINE_ID: 0,
+    #     flight.COL_DEP_UTC: '2021-09-07 09:01:28',
+    #     flight.COL_ARR_UTC: '2021-09-07 11:56:23',
+    #     flight.COL_ON_TIME: 1
+    # })
+    # flight5_id = flight.insert_flight({ # Flight Number 5
+    #     flight.COL_DEP_AIRPT_ID: 4,
+    #     flight.COL_ARR_AIRPT_ID: 0,
+    #     flight.COL_AIRLINE_ID: 2,
+    #     flight.COL_DEP_UTC: '2021-09-07 09:27:54',
+    #     flight.COL_ARR_UTC: '2021-09-07 12:21:03',
+    #     flight.COL_ON_TIME: 0
+    # })
+    # flight6_id = flight.insert_flight({ # Flight Number 6
+    #     flight.COL_DEP_AIRPT_ID: 6,
+    #     flight.COL_ARR_AIRPT_ID: 7,
+    #     flight.COL_AIRLINE_ID: 4,
+    #     flight.COL_DEP_UTC: '2021-09-07 09:50:12',
+    #     flight.COL_ARR_UTC: '2021-09-07 12:39:32',
+    #     flight.COL_ON_TIME: 1
+    # })
+    # flight7_id = flight.insert_flight({ # Flight Number 7
+    #     flight.COL_DEP_AIRPT_ID: 6,
+    #     flight.COL_ARR_AIRPT_ID: 2,
+    #     flight.COL_AIRLINE_ID: 4,
+    #     flight.COL_DEP_UTC: '2021-09-07 10:41:17',
+    #     flight.COL_ARR_UTC: '2021-09-07 20:04:28',
+    #     flight.COL_ON_TIME: 1
+    # })
+    # flight8_id = flight.insert_flight({ # Flight Number 8
+    #     flight.COL_DEP_AIRPT_ID: 7,
+    #     flight.COL_ARR_AIRPT_ID: 6,
+    #     flight.COL_AIRLINE_ID: 3,
+    #     flight.COL_DEP_UTC: '2021-09-07 11:21:49',
+    #     flight.COL_ARR_UTC: '2021-09-07 13:36:38',
+    #     flight.COL_ON_TIME: 0
+    # })
+    # flight9_id = flight.insert_flight({ # Flight Number 9
+    #     flight.COL_DEP_AIRPT_ID: 7,
+    #     flight.COL_ARR_AIRPT_ID: 2,
+    #     flight.COL_AIRLINE_ID: 0,
+    #     flight.COL_DEP_UTC: '2021-09-07 11:48:56',
+    #     flight.COL_ARR_UTC: '2021-09-07 20:15:13',
+    #     flight.COL_ON_TIME: 0
+    # })
 
 
-setup()
+# File runs
+if __name__ == '__main__':
+    setup()

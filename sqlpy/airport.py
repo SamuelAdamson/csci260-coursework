@@ -96,6 +96,33 @@ def select_airport_by_id(id, db=config.DB_NAME):
         return None
 
 
+# Added for Form to SQL
+# Select by Name
+def select_airport_by_name(name, db=config.DB_NAME):
+    # Select Command sql
+    sql = f'''
+        select { COL_ID }, { COL_CITY_ID }, { COL_TYPE } from { TAB_NAME }
+        where { COL_NAME } = :{ COL_NAME }
+    '''
+    # Parameters
+    params = {
+        COL_NAME: filter.dbString(name)
+    }
+
+    # Store response from sql operation
+    response = operations.select_from_table(sql, params, db)
+
+    if response is not None:
+        return {
+            COL_ID: response[0],
+            COL_NAME: filter.dbString(name),
+            COL_CITY_ID: response[1],
+            COL_TYPE: response[2]
+        }
+    else:
+        return None
+
+
 # Testing Create, Update, Read, Delete
 def test_airport(db=config.DB_NAME):
     # Drop Old Table (Delete)
